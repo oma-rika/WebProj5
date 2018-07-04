@@ -12,24 +12,26 @@ import com.internousdev.webproj5.util.DBConnector;
 
 
 public class HelloStrutsDAO {
+
 	List<HelloStrutsDTO> helloStrutsDTOList = new ArrayList<HelloStrutsDTO>();
 
 	public List<HelloStrutsDTO> select() {
+		boolean ret=false;
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 
-		String sql = "select * from users";
 
+		String sql = "select * from users";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 
-			while(rs.next()){
-				HelloStrutsDTO dto = new HelloStrutsDTO();
+			while(rs.next()) {
+				HelloStrutsDTO dto=new HelloStrutsDTO();
 				dto.setUserId(rs.getInt("user_id"));
 				dto.setUserName(rs.getString("user_name"));
 				dto.setPassword(rs.getString("password"));
-				dto.setResult("MySQLと接続できます");
+				dto.setResult("MySQLと接続できます。");
 				helloStrutsDTOList.add(dto);
 			}
 		} catch (SQLException e) {

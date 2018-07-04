@@ -1,20 +1,22 @@
 package com.internousdev.webproj5.dto;
 
 public class HelloStrutsDTO {
-	private int userId;
-	private String userName;
-	private String password;
-	private String result;
+	public int userId;
+	public String userName;
+	public String password;
+	public String result;
 
-	public int getUserId(){
+
+
+	public int getUserId() {
 		return userId;
 	}
 
-	public void getUserId(int userId){
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
-	public String getUserName(){
+	public String getUserName() {
 		return userName;
 	}
 
@@ -22,7 +24,7 @@ public class HelloStrutsDTO {
 		this.userName = userName;
 	}
 
-	public String getPassword(){
+	public String getPassword() {
 		return password;
 	}
 
@@ -30,11 +32,12 @@ public class HelloStrutsDTO {
 		this.password = password;
 	}
 
-	public String getResult(){
+	public String getResult() {
 		return result;
 	}
 
 	public void setResult(String result) {
 		this.result = result;
 	}
+
 }
